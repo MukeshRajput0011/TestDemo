@@ -1,0 +1,83 @@
+<!doctype html>
+<head>
+	<title> Array </title>	
+</head>
+<body>
+	<center>
+		<h2> Array Using JavaScript </h2>
+	</center>
+	<p id="result"></p>
+	<p> <h2> Print Array Values using For Loop: </h2></p>
+	<p id="printArray"></p>
+	<p id="printArray2"></p>
+	<p id="printArray3"></p>
+	<p id="printArray4"></p>
+	<p id="printArray5"></p>
+	<p id="printArray6"></p>
+	<p id="printArray7"></p>
+	<script>
+		/* Array Decleration */
+		var cars = ['z', "Maruti", "xyz",  45,  'a', "BMW", "abc", 'p', "Volvo", 1,  78 ,'m', 10.20,  60 ];
+		var bikes = ["Honda", "Hero", "Bajaj"];
+		var arrayLength = cars.length;
+		cars[5] = "Mukesh";
+		document.getElementById("result").innerHTML = cars + "<br>" + "The length of array is : "+ arrayLength +
+		"<br> Array after sorting : " + cars.sort() ;
+		
+		var arrayValue = "";
+		/* Print Array Values using For Loop*/		
+		for(var i = 0; i < cars.length; i++)
+		{
+		      if( i < cars.length-1 ) {
+		                 arrayValue = arrayValue  + cars[i] + " , ";
+		       }
+		       else {
+		                 arrayValue = arrayValue  + cars[i];
+		      }
+		}
+		document.getElementById("printArray").innerHTML = arrayValue;
+
+		/* Print Array Values in Unordered List*/	
+		cars[cars.length] = "DBIT";	
+		cars[cars.length] = "JBIT";
+		cars.push("UIT");	
+		cars.pop();
+		cars.pop();
+		arrayValue = "";
+		arrayValue = "<ol>";
+		for(var i = 0; i < cars.length; i++)
+		{
+		      arrayValue = arrayValue  + "<li>" + cars[i] + "</li>";
+		}
+		arrayValue = arrayValue  + "</ol>";
+
+
+		document.getElementById("printArray2").innerHTML = "<h3> Array Values in Unordered List : </h3>" 
+			+ arrayValue;
+
+		document.getElementById("printArray3").innerHTML = "<h3> Display Array Values using toString() : </h3>" 
+			+ cars.toString();
+
+		document.getElementById("printArray4").innerHTML = "<h3> Display Array Values using join() : </h3>" 
+			+ cars.join(" * ");
+
+		/* delete cars[5]; */
+
+		document.getElementById("printArray4").innerHTML = "<h3> Display Array Values using join() : </h3>" 
+			+ cars.join(" * ");
+
+		document.getElementById("printArray5").innerHTML = "<h3> Merging Arrays Values using concat() : </h3>" 
+			+ cars.concat(bikes);
+
+		var AfterSliceMethod = cars.slice(2, 7);
+
+		document.getElementById("printArray6").innerHTML = "<h3> Slicing an Array Values using slice() : </h3>" 
+			+ AfterSliceMethod;
+
+		document.getElementById("printArray7").innerHTML = "<h3> Display Reverse Array Values using reverse() : </h3>" 
+			+ cars.reverse();
+	</script>
+</body>
+</html>
+	
+	
